@@ -51,8 +51,7 @@
             this.label1.Size = new System.Drawing.Size(129, 40);
             this.label1.TabIndex = 0;
             this.label1.Text = "Register";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
+            
             // Username
             // 
             this.Username.AutoSize = true;
@@ -74,7 +73,7 @@
             this.userNameTextBox.Size = new System.Drawing.Size(238, 43);
             this.userNameTextBox.TabIndex = 2;
             this.userNameTextBox.UseWaitCursor = true;
-            this.userNameTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+ 
             // 
             // label2
             // 
@@ -97,7 +96,7 @@
             this.passwordTextBox.PasswordChar = '*';
             this.passwordTextBox.Size = new System.Drawing.Size(238, 43);
             this.passwordTextBox.TabIndex = 4;
-            this.passwordTextBox.TextChanged += new System.EventHandler(this.passwordTextBox_TextChanged);
+           
             // 
             // confirmPasswordTextBox
             // 
@@ -119,7 +118,7 @@
             this.label3.Size = new System.Drawing.Size(164, 25);
             this.label3.TabIndex = 5;
             this.label3.Text = "Confirm Password";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+      
             // 
             // loginRegisterButton
             // 
@@ -129,6 +128,7 @@
             this.loginRegisterButton.TabIndex = 15;
             this.loginRegisterButton.Text = "Register";
             this.loginRegisterButton.UseVisualStyleBackColor = true;
+
             // 
             // clearRegisterButton
             // 
@@ -170,7 +170,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "registerForm";
             this.Text = "Register";
-            this.Load += new System.EventHandler(this.Form1_Load);
+
             this.ResumeLayout(false);
             this.PerformLayout();
 

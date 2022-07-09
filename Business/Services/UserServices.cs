@@ -18,13 +18,11 @@ namespace Business.Services
         }
         public void CreateNewUser(string userName, string password)
         {
-            User user = new User(userName, password)
-            {
-                _context.Add(user);
+            User user = new User(userName, password);
+
+            _context.Add(user);
             _context.SaveChanges();
 
-
-            }
         }
     }
 }

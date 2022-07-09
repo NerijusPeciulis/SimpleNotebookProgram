@@ -1,4 +1,8 @@
-﻿using System;
+﻿using Business.Interfaces;
+using Business.Services;
+using Repository.DBContext;
+using Repository.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,34 +16,22 @@ namespace SimpleNotebookProgram
 {
     public partial class registerForm : Form
     {
+        private IUserServices _userServices { get; }
+        
         public registerForm()
         {
+            NotebookDBContext notebookDBContext = new NotebookDBContext();
+            _userServices = new UserServices(notebookDBContext);
+
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void loginRegisterButton_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void passwordTextBox_TextChanged(object sender, EventArgs e)
-        {
-
+            string userName = userNameTextBox.Text;
+            string password = passwordTextBox.Text;
+            User user = new User(userName, password);
+            _userServices.CreateNewUser(userName, password);
         }
     }
 }
