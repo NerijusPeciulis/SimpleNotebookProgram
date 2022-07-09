@@ -8,5 +8,6 @@ namespace Business.Interfaces
 {
     public interface IUserServices
     {
+        void CreateNewUser(string userName, string password);
     }
 }

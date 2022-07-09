@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SimpleNotebookProgram
+namespace SimpleNotebookProgram.Forms
 {
-    public partial class MainMeniu : Form
+    public partial class NotesMenu : Form
     {
-        public MainMeniu()
+        public NotesMenu()
         {
             InitializeComponent();
         }
