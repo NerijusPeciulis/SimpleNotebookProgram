@@ -51,7 +51,7 @@
             this.label1.Size = new System.Drawing.Size(129, 40);
             this.label1.TabIndex = 0;
             this.label1.Text = "Register";
-            
+            // 
             // Username
             // 
             this.Username.AutoSize = true;
@@ -73,7 +73,6 @@
             this.userNameTextBox.Size = new System.Drawing.Size(238, 43);
             this.userNameTextBox.TabIndex = 2;
             this.userNameTextBox.UseWaitCursor = true;
- 
             // 
             // label2
             // 
@@ -96,7 +95,6 @@
             this.passwordTextBox.PasswordChar = '*';
             this.passwordTextBox.Size = new System.Drawing.Size(238, 43);
             this.passwordTextBox.TabIndex = 4;
-           
             // 
             // confirmPasswordTextBox
             // 
@@ -118,17 +116,17 @@
             this.label3.Size = new System.Drawing.Size(164, 25);
             this.label3.TabIndex = 5;
             this.label3.Text = "Confirm Password";
-      
             // 
             // loginRegisterButton
             // 
+            this.loginRegisterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loginRegisterButton.Location = new System.Drawing.Point(223, 503);
             this.loginRegisterButton.Name = "loginRegisterButton";
             this.loginRegisterButton.Size = new System.Drawing.Size(100, 43);
             this.loginRegisterButton.TabIndex = 15;
             this.loginRegisterButton.Text = "Register";
             this.loginRegisterButton.UseVisualStyleBackColor = true;
-
+            this.loginRegisterButton.Click += new System.EventHandler(this.loginRegisterButton_Click);
             // 
             // clearRegisterButton
             // 
@@ -138,6 +136,7 @@
             this.clearRegisterButton.TabIndex = 14;
             this.clearRegisterButton.Text = "Clear";
             this.clearRegisterButton.UseVisualStyleBackColor = true;
+            this.clearRegisterButton.Click += new System.EventHandler(this.clearRegisterButton_Click);
             // 
             // checkBoxShowRegisterPasword
             // 
@@ -170,7 +169,6 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "registerForm";
             this.Text = "Register";
-
             this.ResumeLayout(false);
             this.PerformLayout();
 
