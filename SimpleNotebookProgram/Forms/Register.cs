@@ -38,7 +38,10 @@ namespace SimpleNotebookProgram
 
         private void clearRegisterButton_Click(object sender, EventArgs e)
         {
-
+            userNameTextBox.Clear();
+            passwordTextBox.Clear();
         }
+
+        
     }
 }

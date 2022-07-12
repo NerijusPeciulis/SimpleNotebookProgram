@@ -70,7 +70,6 @@
             this.userNameLoginTextBox.Name = "userNameLoginTextBox";
             this.userNameLoginTextBox.Size = new System.Drawing.Size(245, 43);
             this.userNameLoginTextBox.TabIndex = 9;
-            this.userNameLoginTextBox.UseWaitCursor = true;
             // 
             // Username
             // 

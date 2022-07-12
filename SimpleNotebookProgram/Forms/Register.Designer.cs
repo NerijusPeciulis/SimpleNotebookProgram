@@ -65,6 +65,7 @@
             // 
             // userNameTextBox
             // 
+            this.userNameTextBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.userNameTextBox.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.userNameTextBox.Location = new System.Drawing.Point(85, 105);
             this.userNameTextBox.Margin = new System.Windows.Forms.Padding(4);
@@ -72,7 +73,6 @@
             this.userNameTextBox.Name = "userNameTextBox";
             this.userNameTextBox.Size = new System.Drawing.Size(238, 43);
             this.userNameTextBox.TabIndex = 2;
-            this.userNameTextBox.UseWaitCursor = true;
             // 
             // label2
             // 
@@ -87,6 +87,7 @@
             // 
             // passwordTextBox
             // 
+            this.passwordTextBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.passwordTextBox.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.passwordTextBox.Location = new System.Drawing.Point(85, 191);
             this.passwordTextBox.Margin = new System.Windows.Forms.Padding(4);
@@ -98,6 +99,7 @@
             // 
             // confirmPasswordTextBox
             // 
+            this.confirmPasswordTextBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.confirmPasswordTextBox.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.confirmPasswordTextBox.Location = new System.Drawing.Point(85, 286);
             this.confirmPasswordTextBox.Margin = new System.Windows.Forms.Padding(4);
@@ -169,6 +171,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "registerForm";
             this.Text = "Register";
+        
             this.ResumeLayout(false);
             this.PerformLayout();
 
