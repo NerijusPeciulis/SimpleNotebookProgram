@@ -1,4 +1,6 @@
-﻿using Repository.DBContext;
+﻿using Business.Services;
+using Repository.DBContext;
+using SimpleNotebookProgram.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,10 +15,31 @@ namespace SimpleNotebookProgram
 {
     public partial class Login : Form
     {
+        public static NotebookDBContext _context = new NotebookDBContext();
+        NotesMenu notesmenu = new NotesMenu();
+        UserServices findUser = new(_context);
         public Login()
         {
-            //NotebookDBContext notebookDBContext
             InitializeComponent();
+        }
+
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+            string userName = userNameLoginTextBox.Text;
+            string userPassword = passwordLoginTextBox.Text;
+
+            var user = findUser.FindUserByLogNameAndPassword(userName, userPassword);
+            if (user == null)
+            {
+                MessageBox.Show("User name or password is incorrect, please try again.");
+                userNameLoginTextBox.Clear();
+                passwordLoginTextBox.Clear();
+            }
+            else
+            {
+                notesmenu.Show();
+                this.Hide();
+            }
         }
     }
 }
