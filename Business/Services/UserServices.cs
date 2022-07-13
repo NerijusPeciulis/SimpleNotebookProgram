@@ -30,12 +30,5 @@ namespace Business.Services
             
         }
 
-        public User FindUserByLogNameAndPassword(string username, string password)
-        {
-            User user = new(username, password);
-            var users = _context.Users.
-                FirstOrDefault(users => users.Username == username && users.Password == password);
-            return users;
-        }
     }
 }
