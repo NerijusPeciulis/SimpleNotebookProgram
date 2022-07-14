@@ -1,4 +1,5 @@
-﻿using Repository.DBContext;
+﻿using Microsoft.EntityFrameworkCore;
+using Repository.DBContext;
 using Repository.Models;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,10 @@ namespace Business.Services
     public class CategoryServices
     {
         private NotebookDBContext _context;
+
+        public CategoryServices()
+        {
+        }
 
         public CategoryServices(NotebookDBContext context)
         {
@@ -28,13 +33,15 @@ namespace Business.Services
             var categories = _context.Categories.
                 FirstOrDefault(categories => categories.Name == name);
 
-
         }
 
-        public void ShowCategories()
+        public List<Category> GetAllCategories(int id)
         {
-            _context.DisplayAndSearch("SELECT id, Name", dataGridview);
-
+            List<Category> category = new List<Category>();
+            var categoriesList = _context.Categories
+                .Include(name => name.Name)
+                .FirstOrDefault(category => category.Id == id);
+            return category;
         }
 
     }

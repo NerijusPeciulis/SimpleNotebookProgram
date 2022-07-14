@@ -35,9 +35,10 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.categoriesListTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.categoryNameTextBox = new System.Windows.Forms.TextBox();
+            this.dataCategoriesGridView = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataCategoriesGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -108,16 +109,6 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Categories Menu";
             // 
-            // categoriesListTextBox
-            // 
-            this.categoriesListTextBox.Location = new System.Drawing.Point(548, 83);
-            this.categoriesListTextBox.Multiline = true;
-            this.categoriesListTextBox.Name = "categoriesListTextBox";
-            this.categoriesListTextBox.ReadOnly = true;
-            this.categoriesListTextBox.Size = new System.Drawing.Size(347, 387);
-            this.categoriesListTextBox.TabIndex = 7;
-            this.categoriesListTextBox.TextChanged += new System.EventHandler(this.categoriesListTextBox_TextChanged);
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -135,14 +126,28 @@
             this.categoryNameTextBox.Size = new System.Drawing.Size(216, 23);
             this.categoryNameTextBox.TabIndex = 9;
             // 
+            // dataCategoriesGridView
+            // 
+            this.dataCategoriesGridView.AllowUserToAddRows = false;
+            this.dataCategoriesGridView.AllowUserToDeleteRows = false;
+            this.dataCategoriesGridView.AllowUserToOrderColumns = true;
+            this.dataCategoriesGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataCategoriesGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataCategoriesGridView.Location = new System.Drawing.Point(513, 113);
+            this.dataCategoriesGridView.Name = "dataCategoriesGridView";
+            this.dataCategoriesGridView.ReadOnly = true;
+            this.dataCategoriesGridView.RowTemplate.Height = 25;
+            this.dataCategoriesGridView.Size = new System.Drawing.Size(365, 399);
+            this.dataCategoriesGridView.TabIndex = 10;
+            // 
             // categoriesMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(907, 599);
+            this.Controls.Add(this.dataCategoriesGridView);
             this.Controls.Add(this.categoryNameTextBox);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.categoriesListTextBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -152,6 +157,8 @@
             this.Controls.Add(this.label1);
             this.Name = "categoriesMenu";
             this.Text = "Categories Menu";
+            this.Load += new System.EventHandler(this.categoriesMenu_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataCategoriesGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -166,8 +173,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox categoriesListTextBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox categoryNameTextBox;
+        private System.Windows.Forms.DataGridView dataCategoriesGridView;
     }
 }

@@ -29,6 +29,7 @@ namespace SimpleNotebookProgram
             string userPassword = passwordLoginTextBox.Text;
 
             var user = findUser.FindUserByLogNameAndPassword(userName, userPassword);
+
             if (user == null)
             {
                 MessageBox.Show("User name or password is incorrect, please try again.");
