@@ -157,7 +157,7 @@
             this.Controls.Add(this.label1);
             this.Name = "categoriesMenu";
             this.Text = "Categories Menu";
-            this.Load += new System.EventHandler(this.categoriesMenu_Load);
+            this.Load += new System.EventHandler(this.categoriesMenu_load);
             ((System.ComponentModel.ISupportInitialize)(this.dataCategoriesGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

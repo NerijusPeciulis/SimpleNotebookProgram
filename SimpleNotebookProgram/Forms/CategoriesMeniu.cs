@@ -1,4 +1,5 @@
 ﻿using Business.Services;
+using Microsoft.Data.SqlClient;
 using Repository.DBContext;
 using Repository.Models;
 using System;
@@ -16,10 +17,11 @@ namespace SimpleNotebookProgram
 
     public partial class categoriesMenu : Form
     {
-        public static NotebookDBContext _context = new NotebookDBContext();
-        // CategoryServices addcategory = new(_context);
+        public static NotebookDBContext context = new NotebookDBContext();
+        CategoryServices addcategory = new(context);
         CategoryServices categoryServices = new CategoryServices();
-        DataTable table = new DataTable("table");
+
+        string connectionString = "Server=localhost;Database=NotebookDB;Trusted_Connection=True;";
         public categoriesMenu()
         {
             InitializeComponent();
@@ -27,23 +29,37 @@ namespace SimpleNotebookProgram
 
         private void categoriesCreateButton_Click(object sender, EventArgs e)
         {
-
             string name = categoryNameTextBox.Text;
 
-            categoryServices.CreateNewCategory(name);
-            categoryNameTextBox.Clear(); 
-            table.Rows.Add(categoryNameTextBox.Text);
+            addcategory.CreateNewCategory(name);
             MessageBox.Show("Category created succsesfully");
+            categoryNameTextBox.Clear();
+
+            // rodymas gridwiev
+            using (SqlConnection sqlConnection = new SqlConnection(connectionString))
+            {
+                sqlConnection.Open();
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("SELECT * FROM Categories", sqlConnection);
+                DataTable dataTable = new DataTable();
+                sqlDataAdapter.Fill(dataTable);
+
+                dataCategoriesGridView.DataSource = dataTable;
+            }
 
         }
 
-        private void categoriesMenu_Load(object sender, EventArgs e)
+        private void categoriesMenu_load(object sender, EventArgs e)
         {
-            table.Columns.Add("Id", Type.GetType("System.String"));
-            table.Columns.Add("Name", Type.GetType("System.String"));
-            dataCategoriesGridView.DataSource = table;
-            CategoryServices categoryServices = new CategoryServices();
-            categoryServices.GetAllCategories();
+            using (SqlConnection sqlConnection = new SqlConnection(connectionString))
+            {
+                sqlConnection.Open();
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("SELECT * FROM Categories", sqlConnection);
+                DataTable dataTable = new DataTable();
+                sqlDataAdapter.Fill(dataTable);
+
+                dataCategoriesGridView.DataSource = dataTable;
+            }
+
         }
     }
 }

@@ -35,14 +35,14 @@ namespace Business.Services
 
         }
 
-        public List<Category> GetAllCategories(int id)
+       /* public List<Category> GetAllCategories(int id)
         {
             List<Category> category = new List<Category>();
             var categoriesList = _context.Categories
                 .Include(name => name.Name)
                 .FirstOrDefault(category => category.Id == id);
             return category;
-        }
+        }*/
 
     }
 }
