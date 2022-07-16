@@ -17,6 +17,7 @@ namespace SimpleNotebookProgram
     {
         public static NotebookDBContext _context = new NotebookDBContext();
         NotesMenu notesmenu = new NotesMenu();
+        categoriesMenu categoriesMenu = new categoriesMenu();
         UserServices findUser = new(_context);
         public Login()
         {
@@ -38,7 +39,7 @@ namespace SimpleNotebookProgram
             }
             else
             {
-                notesmenu.Show();
+                categoriesMenu.Show();
                 this.Hide();
             }
         }

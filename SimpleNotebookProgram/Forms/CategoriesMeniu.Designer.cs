@@ -32,8 +32,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.categoriesCreateButton = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.editCategoryButton = new System.Windows.Forms.Button();
+            this.deleteButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.categoryNameTextBox = new System.Windows.Forms.TextBox();
@@ -81,23 +81,25 @@
             this.categoriesCreateButton.UseVisualStyleBackColor = true;
             this.categoriesCreateButton.Click += new System.EventHandler(this.categoriesCreateButton_Click);
             // 
-            // button2
+            // editCategoryButton
             // 
-            this.button2.Location = new System.Drawing.Point(208, 250);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(162, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Edit";
-            this.button2.UseVisualStyleBackColor = true;
+            this.editCategoryButton.Location = new System.Drawing.Point(208, 250);
+            this.editCategoryButton.Name = "editCategoryButton";
+            this.editCategoryButton.Size = new System.Drawing.Size(162, 23);
+            this.editCategoryButton.TabIndex = 4;
+            this.editCategoryButton.Text = "Edit";
+            this.editCategoryButton.UseVisualStyleBackColor = true;
+            this.editCategoryButton.Click += new System.EventHandler(this.editCategoryButton_Click);
             // 
-            // button3
+            // deleteButton
             // 
-            this.button3.Location = new System.Drawing.Point(208, 308);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(162, 23);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Delete";
-            this.button3.UseVisualStyleBackColor = true;
+            this.deleteButton.Location = new System.Drawing.Point(208, 308);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(162, 23);
+            this.deleteButton.TabIndex = 5;
+            this.deleteButton.Text = "Delete";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // label4
             // 
@@ -128,7 +130,6 @@
             // 
             // dataCategoriesGridView
             // 
-            this.dataCategoriesGridView.AllowUserToAddRows = false;
             this.dataCategoriesGridView.AllowUserToDeleteRows = false;
             this.dataCategoriesGridView.AllowUserToOrderColumns = true;
             this.dataCategoriesGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -139,6 +140,7 @@
             this.dataCategoriesGridView.RowTemplate.Height = 25;
             this.dataCategoriesGridView.Size = new System.Drawing.Size(365, 399);
             this.dataCategoriesGridView.TabIndex = 10;
+            this.dataCategoriesGridView.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataCategoriesGridView_RowHeaderMouseClick);
             // 
             // categoriesMenu
             // 
@@ -149,15 +151,14 @@
             this.Controls.Add(this.categoryNameTextBox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.deleteButton);
+            this.Controls.Add(this.editCategoryButton);
             this.Controls.Add(this.categoriesCreateButton);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "categoriesMenu";
             this.Text = "Categories Menu";
-            this.Load += new System.EventHandler(this.categoriesMenu_load);
             ((System.ComponentModel.ISupportInitialize)(this.dataCategoriesGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -170,8 +171,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button categoriesCreateButton;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button editCategoryButton;
+        private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox categoryNameTextBox;

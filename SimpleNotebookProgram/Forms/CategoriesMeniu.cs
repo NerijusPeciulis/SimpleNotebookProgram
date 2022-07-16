@@ -12,54 +12,100 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace SimpleNotebookProgram
 {
 
     public partial class categoriesMenu : Form
     {
-        public static NotebookDBContext context = new NotebookDBContext();
-        CategoryServices addcategory = new(context);
-        CategoryServices categoryServices = new CategoryServices();
+        SqlConnection sqlConnection = new SqlConnection("Server=localhost;Database=NotebookDB;Trusted_Connection=True;");
+        SqlCommand sqlcomand;
+        SqlDataAdapter sqlDataAdapter;
 
-        string connectionString = "Server=localhost;Database=NotebookDB;Trusted_Connection=True;";
+        int Id = 0;
         public categoriesMenu()
         {
             InitializeComponent();
+            DisplayData();
         }
-
+        private void DisplayData()
+        {
+            sqlConnection.Open();
+            DataTable dataTable = new DataTable();
+            sqlDataAdapter = new SqlDataAdapter("SELECT * FROM Categories", sqlConnection);
+            sqlDataAdapter.Fill(dataTable);
+            dataCategoriesGridView.DataSource = dataTable;
+            sqlConnection.Close();
+        }
         private void categoriesCreateButton_Click(object sender, EventArgs e)
         {
-            string name = categoryNameTextBox.Text;
 
-            addcategory.CreateNewCategory(name);
-            MessageBox.Show("Category created succsesfully");
-            categoryNameTextBox.Clear();
-
-            // rodymas gridwiev
-            using (SqlConnection sqlConnection = new SqlConnection(connectionString))
+            if (categoryNameTextBox.Text != "")
             {
+                sqlcomand = new SqlCommand("INSERT into Categories (Name) values (@name)", sqlConnection);
                 sqlConnection.Open();
-                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("SELECT * FROM Categories", sqlConnection);
-                DataTable dataTable = new DataTable();
-                sqlDataAdapter.Fill(dataTable);
-
-                dataCategoriesGridView.DataSource = dataTable;
+                sqlcomand.Parameters.AddWithValue("@name", categoryNameTextBox.Text);
+                sqlcomand.ExecuteNonQuery();
+                sqlConnection.Close();
+                MessageBox.Show("Record Inserted Successfully");
+                DisplayData();
+                categoryNameTextBox.Clear();
+            }
+            else
+            {
+                MessageBox.Show("Please Provide Details!");
             }
 
         }
 
-        private void categoriesMenu_load(object sender, EventArgs e)
+        private void deleteButton_Click(object sender, EventArgs e)
         {
-            using (SqlConnection sqlConnection = new SqlConnection(connectionString))
+
             {
-                sqlConnection.Open();
-                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("SELECT * FROM Categories", sqlConnection);
-                DataTable dataTable = new DataTable();
-                sqlDataAdapter.Fill(dataTable);
 
-                dataCategoriesGridView.DataSource = dataTable;
+                if (Id != 0)
+                {
+                    sqlcomand = new SqlCommand("DELETE Categories WHERE Id=@Id", sqlConnection);
+                    sqlConnection.Open();
+                    sqlcomand.Parameters.AddWithValue("@Id", Id);
+                    sqlcomand.ExecuteNonQuery();
+                    sqlConnection.Close();
+                    MessageBox.Show("Data deleted");
+                    DisplayData();
+                    categoryNameTextBox.Clear();
+
+                }
+                else
+                {
+                    MessageBox.Show("Please Select Record to Delete");
+                }
             }
+        }
 
+        private void dataCategoriesGridView_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            Id = Convert.ToInt32(dataCategoriesGridView.Rows[e.RowIndex].Cells[0].Value.ToString());
+            categoryNameTextBox.Text = dataCategoriesGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
+        }
+
+        private void editCategoryButton_Click(object sender, EventArgs e)
+        {
+            if (categoryNameTextBox.Text != "")
+            {
+                sqlcomand = new SqlCommand("UPDATE Categories SET Name=@name WHERE Id=@Id", sqlConnection);
+                sqlConnection.Open();
+                sqlcomand.Parameters.AddWithValue("@Id", Id);
+                sqlcomand.Parameters.AddWithValue("@name", categoryNameTextBox.Text);
+                sqlcomand.ExecuteNonQuery();
+                MessageBox.Show("Record Updated Successfully");
+                sqlConnection.Close();
+                DisplayData();
+                categoryNameTextBox.Clear();
+            }
+            else
+            {
+                MessageBox.Show("Please Select Record to Update");
+            }
         }
     }
 }
