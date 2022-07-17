@@ -2,6 +2,7 @@
 using Microsoft.Data.SqlClient;
 using Repository.DBContext;
 using Repository.Models;
+using SimpleNotebookProgram.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,12 +16,12 @@ using System.Windows.Forms;
 
 namespace SimpleNotebookProgram
 {
-
     public partial class categoriesMenu : Form
     {
         SqlConnection sqlConnection = new SqlConnection("Server=localhost;Database=NotebookDB;Trusted_Connection=True;");
         SqlCommand sqlcomand;
         SqlDataAdapter sqlDataAdapter;
+        notesMenu notesMenu = new notesMenu();
 
         int Id = 0;
         public categoriesMenu()
@@ -106,6 +107,12 @@ namespace SimpleNotebookProgram
             {
                 MessageBox.Show("Please Select Record to Update");
             }
+        }
+
+        private void goToNotesMenu_Click(object sender, EventArgs e)
+        {
+            notesMenu.Show();
+            this.Hide();
         }
     }
 }

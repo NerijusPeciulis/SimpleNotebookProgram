@@ -38,6 +38,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.categoryNameTextBox = new System.Windows.Forms.TextBox();
             this.dataCategoriesGridView = new System.Windows.Forms.DataGridView();
+            this.goToNotesMenu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataCategoriesGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -142,11 +143,22 @@
             this.dataCategoriesGridView.TabIndex = 10;
             this.dataCategoriesGridView.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataCategoriesGridView_RowHeaderMouseClick);
             // 
+            // goToNotesMenu
+            // 
+            this.goToNotesMenu.Location = new System.Drawing.Point(208, 457);
+            this.goToNotesMenu.Name = "goToNotesMenu";
+            this.goToNotesMenu.Size = new System.Drawing.Size(162, 23);
+            this.goToNotesMenu.TabIndex = 30;
+            this.goToNotesMenu.Text = "Create Note";
+            this.goToNotesMenu.UseVisualStyleBackColor = true;
+            this.goToNotesMenu.Click += new System.EventHandler(this.goToNotesMenu_Click);
+            // 
             // categoriesMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(907, 599);
+            this.Controls.Add(this.goToNotesMenu);
             this.Controls.Add(this.dataCategoriesGridView);
             this.Controls.Add(this.categoryNameTextBox);
             this.Controls.Add(this.label5);
@@ -177,5 +189,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox categoryNameTextBox;
         private System.Windows.Forms.DataGridView dataCategoriesGridView;
+        private System.Windows.Forms.Button goToNotesMenu;
     }
 }

@@ -16,7 +16,7 @@ namespace SimpleNotebookProgram
     public partial class Login : Form
     {
         public static NotebookDBContext _context = new NotebookDBContext();
-        NotesMenu notesmenu = new NotesMenu();
+        notesMenu notesmenu = new notesMenu();
         categoriesMenu categoriesMenu = new categoriesMenu();
         UserServices findUser = new(_context);
         public Login()

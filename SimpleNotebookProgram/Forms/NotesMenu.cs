@@ -11,15 +11,16 @@ using System.Windows.Forms;
 
 namespace SimpleNotebookProgram.Forms
 {
-    public partial class NotesMenu : Form
+    public partial class notesMenu : Form
     {
         SqlConnection sqlConnection = new SqlConnection("Server=localhost;Database=NotebookDB;Trusted_Connection=True;");
         SqlCommand sqlcomand;
         SqlDataAdapter sqlDataAdapter;
+        
 
         int Id = 0;
 
-        public NotesMenu()
+        public notesMenu()
         {
             InitializeComponent();
         }
@@ -126,6 +127,13 @@ namespace SimpleNotebookProgram.Forms
                     dataNotesGridView.DataSource = dataTable;
                 }
             }
+        }
+
+        private void backToCategoriesMenu_Click(object sender, EventArgs e)
+        {
+            categoriesMenu categoriesMenu = new categoriesMenu();
+            categoriesMenu.Show();
+            this.Hide();
         }
     }
 }

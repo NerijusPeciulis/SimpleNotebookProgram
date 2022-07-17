@@ -1,6 +1,6 @@
 ﻿namespace SimpleNotebookProgram.Forms
 {
-    partial class NotesMenu
+    partial class notesMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -35,17 +35,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.notesTextbox = new System.Windows.Forms.TextBox();
             this.noteSearchTextBox = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.noteNameTextbox = new System.Windows.Forms.TextBox();
             this.noteNameLabel = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.noteDescription = new System.Windows.Forms.TextBox();
             this.dataNotesGridView = new System.Windows.Forms.DataGridView();
+            this.backToCategoriesMenu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataNotesGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -119,16 +118,6 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Create Note";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(12, 577);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(110, 30);
-            this.label6.TabIndex = 18;
-            this.label6.Text = "Filter Note";
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -141,10 +130,10 @@
             // 
             // notesTextbox
             // 
-            this.notesTextbox.Location = new System.Drawing.Point(613, 77);
+            this.notesTextbox.Location = new System.Drawing.Point(561, 77);
             this.notesTextbox.Multiline = true;
             this.notesTextbox.Name = "notesTextbox";
-            this.notesTextbox.Size = new System.Drawing.Size(385, 424);
+            this.notesTextbox.Size = new System.Drawing.Size(437, 462);
             this.notesTextbox.TabIndex = 20;
             // 
             // noteSearchTextBox
@@ -154,13 +143,6 @@
             this.noteSearchTextBox.Size = new System.Drawing.Size(162, 23);
             this.noteSearchTextBox.TabIndex = 21;
             this.noteSearchTextBox.TextChanged += new System.EventHandler(this.noteSearchTextBox_TextChanged);
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(193, 586);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(162, 23);
-            this.textBox3.TabIndex = 22;
             // 
             // label5
             // 
@@ -183,7 +165,7 @@
             // 
             this.noteNameLabel.AutoSize = true;
             this.noteNameLabel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.noteNameLabel.Location = new System.Drawing.Point(748, 44);
+            this.noteNameLabel.Location = new System.Drawing.Point(710, 44);
             this.noteNameLabel.Name = "noteNameLabel";
             this.noteNameLabel.Size = new System.Drawing.Size(125, 30);
             this.noteNameLabel.TabIndex = 25;
@@ -218,22 +200,31 @@
             this.dataNotesGridView.TabIndex = 28;
             this.dataNotesGridView.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataNotesGridView_RowHeaderMouseClick);
             // 
+            // backToCategoriesMenu
+            // 
+            this.backToCategoriesMenu.Location = new System.Drawing.Point(368, 589);
+            this.backToCategoriesMenu.Name = "backToCategoriesMenu";
+            this.backToCategoriesMenu.Size = new System.Drawing.Size(162, 23);
+            this.backToCategoriesMenu.TabIndex = 29;
+            this.backToCategoriesMenu.Text = "Back To Categories";
+            this.backToCategoriesMenu.UseVisualStyleBackColor = true;
+            this.backToCategoriesMenu.Click += new System.EventHandler(this.backToCategoriesMenu_Click);
+            // 
             // NotesMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1010, 636);
+            this.Controls.Add(this.backToCategoriesMenu);
             this.Controls.Add(this.dataNotesGridView);
             this.Controls.Add(this.noteDescription);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.noteNameLabel);
             this.Controls.Add(this.noteNameTextbox);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.noteSearchTextBox);
             this.Controls.Add(this.notesTextbox);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.deleteNoteButton);
             this.Controls.Add(this.editNoteButton);
@@ -259,16 +250,15 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox notesTextbox;
         private System.Windows.Forms.TextBox noteSearchTextBox;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox noteNameTextbox;
         private System.Windows.Forms.Label noteNameLabel;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox noteDescription;
         private System.Windows.Forms.DataGridView dataNotesGridView;
+        private System.Windows.Forms.Button backToCategoriesMenu;
     }
 }
