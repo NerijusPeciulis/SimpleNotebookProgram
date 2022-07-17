@@ -19,9 +19,7 @@ namespace Business.Services
         public void CreateNewUser(string username, string password)
         {
             User user = new(username, password);
-            // _context.Users.Where(users => users.UserName == userName).ToList();
-            //  return user;
-
+           
             _context.Add(user);
             _context.SaveChanges();
 

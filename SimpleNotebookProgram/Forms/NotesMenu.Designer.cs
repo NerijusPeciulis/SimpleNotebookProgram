@@ -45,7 +45,11 @@
             this.noteDescription = new System.Windows.Forms.TextBox();
             this.dataNotesGridView = new System.Windows.Forms.DataGridView();
             this.backToCategoriesMenu = new System.Windows.Forms.Button();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.addImageButton = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dataNotesGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -130,7 +134,7 @@
             // 
             // notesTextbox
             // 
-            this.notesTextbox.Location = new System.Drawing.Point(561, 77);
+            this.notesTextbox.Location = new System.Drawing.Point(561, 84);
             this.notesTextbox.Multiline = true;
             this.notesTextbox.Name = "notesTextbox";
             this.notesTextbox.Size = new System.Drawing.Size(437, 462);
@@ -210,11 +214,36 @@
             this.backToCategoriesMenu.UseVisualStyleBackColor = true;
             this.backToCategoriesMenu.Click += new System.EventHandler(this.backToCategoriesMenu_Click);
             // 
-            // NotesMenu
+            // pictureBox
+            // 
+            this.pictureBox.Location = new System.Drawing.Point(784, 100);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(200, 215);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox.TabIndex = 30;
+            this.pictureBox.TabStop = false;
+            // 
+            // addImageButton
+            // 
+            this.addImageButton.Location = new System.Drawing.Point(784, 338);
+            this.addImageButton.Name = "addImageButton";
+            this.addImageButton.Size = new System.Drawing.Size(200, 23);
+            this.addImageButton.TabIndex = 31;
+            this.addImageButton.Text = "Add Image";
+            this.addImageButton.UseVisualStyleBackColor = true;
+            this.addImageButton.Click += new System.EventHandler(this.addImageButton_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // notesMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1010, 636);
+            this.Controls.Add(this.addImageButton);
+            this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.backToCategoriesMenu);
             this.Controls.Add(this.dataNotesGridView);
             this.Controls.Add(this.noteDescription);
@@ -232,10 +261,11 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "NotesMenu";
+            this.Name = "notesMenu";
             this.Text = "NotesMenu";
             this.Load += new System.EventHandler(this.NotesMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataNotesGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -260,5 +290,8 @@
         private System.Windows.Forms.TextBox noteDescription;
         private System.Windows.Forms.DataGridView dataNotesGridView;
         private System.Windows.Forms.Button backToCategoriesMenu;
+        private System.Windows.Forms.PictureBox pictureBox;
+        private System.Windows.Forms.Button addImageButton;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

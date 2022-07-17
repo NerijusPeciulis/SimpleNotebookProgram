@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -134,6 +135,19 @@ namespace SimpleNotebookProgram.Forms
             categoriesMenu categoriesMenu = new categoriesMenu();
             categoriesMenu.Show();
             this.Hide();
+        }
+
+        
+
+        private void addImageButton_Click(object sender, EventArgs e)
+        {
+            // One method
+            // pictureBox.Image = Properties.Resources.download;
+
+            // Second method you can choose image yourself from files
+            openFileDialog1.ShowDialog();
+            string filePath = openFileDialog1.FileName;
+            pictureBox.Image = Image.FromFile(filePath);
         }
     }
 }
