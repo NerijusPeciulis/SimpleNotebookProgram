@@ -64,7 +64,9 @@
             // 
             // deleteNoteButton
             // 
-            this.deleteNoteButton.Location = new System.Drawing.Point(193, 478);
+            this.deleteNoteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteNoteButton.ForeColor = System.Drawing.Color.White;
+            this.deleteNoteButton.Location = new System.Drawing.Point(384, 471);
             this.deleteNoteButton.Name = "deleteNoteButton";
             this.deleteNoteButton.Size = new System.Drawing.Size(162, 23);
             this.deleteNoteButton.TabIndex = 12;
@@ -74,7 +76,9 @@
             // 
             // editNoteButton
             // 
-            this.editNoteButton.Location = new System.Drawing.Point(193, 426);
+            this.editNoteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editNoteButton.ForeColor = System.Drawing.Color.White;
+            this.editNoteButton.Location = new System.Drawing.Point(384, 427);
             this.editNoteButton.Name = "editNoteButton";
             this.editNoteButton.Size = new System.Drawing.Size(162, 23);
             this.editNoteButton.TabIndex = 11;
@@ -84,7 +88,9 @@
             // 
             // createNoteButton
             // 
-            this.createNoteButton.Location = new System.Drawing.Point(193, 84);
+            this.createNoteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.createNoteButton.ForeColor = System.Drawing.Color.White;
+            this.createNoteButton.Location = new System.Drawing.Point(384, 84);
             this.createNoteButton.Name = "createNoteButton";
             this.createNoteButton.Size = new System.Drawing.Size(162, 23);
             this.createNoteButton.TabIndex = 10;
@@ -126,7 +132,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(12, 532);
+            this.label7.Location = new System.Drawing.Point(12, 516);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(127, 30);
             this.label7.TabIndex = 19;
@@ -134,7 +140,9 @@
             // 
             // notesTextbox
             // 
+            this.notesTextbox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.notesTextbox.Location = new System.Drawing.Point(561, 84);
+            this.notesTextbox.MaxLength = 200;
             this.notesTextbox.Multiline = true;
             this.notesTextbox.Name = "notesTextbox";
             this.notesTextbox.Size = new System.Drawing.Size(437, 462);
@@ -142,7 +150,7 @@
             // 
             // noteSearchTextBox
             // 
-            this.noteSearchTextBox.Location = new System.Drawing.Point(193, 539);
+            this.noteSearchTextBox.Location = new System.Drawing.Point(384, 523);
             this.noteSearchTextBox.Name = "noteSearchTextBox";
             this.noteSearchTextBox.Size = new System.Drawing.Size(162, 23);
             this.noteSearchTextBox.TabIndex = 21;
@@ -160,7 +168,7 @@
             // 
             // noteNameTextbox
             // 
-            this.noteNameTextbox.Location = new System.Drawing.Point(193, 130);
+            this.noteNameTextbox.Location = new System.Drawing.Point(384, 130);
             this.noteNameTextbox.Name = "noteNameTextbox";
             this.noteNameTextbox.Size = new System.Drawing.Size(162, 23);
             this.noteNameTextbox.TabIndex = 24;
@@ -169,7 +177,7 @@
             // 
             this.noteNameLabel.AutoSize = true;
             this.noteNameLabel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.noteNameLabel.Location = new System.Drawing.Point(710, 44);
+            this.noteNameLabel.Location = new System.Drawing.Point(703, 39);
             this.noteNameLabel.Name = "noteNameLabel";
             this.noteNameLabel.Size = new System.Drawing.Size(125, 30);
             this.noteNameLabel.TabIndex = 25;
@@ -187,7 +195,7 @@
             // 
             // noteDescription
             // 
-            this.noteDescription.Location = new System.Drawing.Point(193, 175);
+            this.noteDescription.Location = new System.Drawing.Point(384, 175);
             this.noteDescription.Name = "noteDescription";
             this.noteDescription.Size = new System.Drawing.Size(162, 23);
             this.noteDescription.TabIndex = 27;
@@ -206,7 +214,9 @@
             // 
             // backToCategoriesMenu
             // 
-            this.backToCategoriesMenu.Location = new System.Drawing.Point(368, 589);
+            this.backToCategoriesMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backToCategoriesMenu.ForeColor = System.Drawing.Color.White;
+            this.backToCategoriesMenu.Location = new System.Drawing.Point(384, 582);
             this.backToCategoriesMenu.Name = "backToCategoriesMenu";
             this.backToCategoriesMenu.Size = new System.Drawing.Size(162, 23);
             this.backToCategoriesMenu.TabIndex = 29;
@@ -216,7 +226,7 @@
             // 
             // pictureBox
             // 
-            this.pictureBox.Location = new System.Drawing.Point(784, 100);
+            this.pictureBox.Location = new System.Drawing.Point(667, 274);
             this.pictureBox.Name = "pictureBox";
             this.pictureBox.Size = new System.Drawing.Size(200, 215);
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -225,7 +235,9 @@
             // 
             // addImageButton
             // 
-            this.addImageButton.Location = new System.Drawing.Point(784, 338);
+            this.addImageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addImageButton.ForeColor = System.Drawing.Color.White;
+            this.addImageButton.Location = new System.Drawing.Point(667, 510);
             this.addImageButton.Name = "addImageButton";
             this.addImageButton.Size = new System.Drawing.Size(200, 23);
             this.addImageButton.TabIndex = 31;
@@ -241,7 +253,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1010, 636);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(1010, 695);
             this.Controls.Add(this.addImageButton);
             this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.backToCategoriesMenu);

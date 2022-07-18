@@ -35,6 +35,7 @@
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.loginRegisterButton = new System.Windows.Forms.Button();
             this.clearRegisterButton = new System.Windows.Forms.Button();
+            this.backToLogin = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -97,6 +98,7 @@
             // loginRegisterButton
             // 
             this.loginRegisterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.loginRegisterButton.ForeColor = System.Drawing.Color.White;
             this.loginRegisterButton.Location = new System.Drawing.Point(223, 503);
             this.loginRegisterButton.Name = "loginRegisterButton";
             this.loginRegisterButton.Size = new System.Drawing.Size(100, 43);
@@ -107,6 +109,8 @@
             // 
             // clearRegisterButton
             // 
+            this.clearRegisterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.clearRegisterButton.ForeColor = System.Drawing.Color.White;
             this.clearRegisterButton.Location = new System.Drawing.Point(85, 503);
             this.clearRegisterButton.Name = "clearRegisterButton";
             this.clearRegisterButton.Size = new System.Drawing.Size(102, 43);
@@ -115,11 +119,25 @@
             this.clearRegisterButton.UseVisualStyleBackColor = true;
             this.clearRegisterButton.Click += new System.EventHandler(this.clearRegisterButton_Click);
             // 
+            // backToLogin
+            // 
+            this.backToLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backToLogin.ForeColor = System.Drawing.Color.White;
+            this.backToLogin.Location = new System.Drawing.Point(128, 571);
+            this.backToLogin.Name = "backToLogin";
+            this.backToLogin.Size = new System.Drawing.Size(135, 43);
+            this.backToLogin.TabIndex = 16;
+            this.backToLogin.Text = "Back To Login";
+            this.backToLogin.UseVisualStyleBackColor = true;
+            this.backToLogin.Click += new System.EventHandler(this.backToLogin_Click);
+            // 
             // registerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(414, 879);
+            this.Controls.Add(this.backToLogin);
             this.Controls.Add(this.loginRegisterButton);
             this.Controls.Add(this.clearRegisterButton);
             this.Controls.Add(this.passwordTextBox);
@@ -145,5 +163,6 @@
         private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.Button loginRegisterButton;
         private System.Windows.Forms.Button clearRegisterButton;
+        private System.Windows.Forms.Button backToLogin;
     }
 }

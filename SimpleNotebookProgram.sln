@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32414.318
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleNotebookProgram", "SimpleNotebookProgram\SimpleNotebookProgram.csproj", "{3DFB45BB-F55D-4B2C-9DD9-6207F66292B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleNotebookProgram", "SimpleNotebookProgram\SimpleNotebookProgram.csproj", "{3DFB45BB-F55D-4B2C-9DD9-6207F66292B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Business\Business.csproj", "{5317F992-F099-4235-A995-7B5B35A4711C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Business", "Business\Business.csproj", "{5317F992-F099-4235-A995-7B5B35A4711C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Repository.csproj", "{2F10C512-E00F-475C-838C-5C7F83DD9EB8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository", "Repository\Repository.csproj", "{2F10C512-E00F-475C-838C-5C7F83DD9EB8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitTests", "XUnitTests\XUnitTests.csproj", "{6894527F-3D6E-4B12-A93D-3ABD23F64524}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XUnitTests", "XUnitTests\XUnitTests.csproj", "{6894527F-3D6E-4B12-A93D-3ABD23F64524}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

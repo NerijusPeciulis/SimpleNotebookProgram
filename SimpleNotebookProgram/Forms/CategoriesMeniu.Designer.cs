@@ -46,7 +46,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(174, 74);
+            this.label1.Location = new System.Drawing.Point(22, 136);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(162, 30);
             this.label1.TabIndex = 0;
@@ -74,7 +74,9 @@
             // 
             // categoriesCreateButton
             // 
-            this.categoriesCreateButton.Location = new System.Drawing.Point(147, 151);
+            this.categoriesCreateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.categoriesCreateButton.ForeColor = System.Drawing.Color.White;
+            this.categoriesCreateButton.Location = new System.Drawing.Point(312, 144);
             this.categoriesCreateButton.Name = "categoriesCreateButton";
             this.categoriesCreateButton.Size = new System.Drawing.Size(162, 23);
             this.categoriesCreateButton.TabIndex = 3;
@@ -84,7 +86,9 @@
             // 
             // editCategoryButton
             // 
-            this.editCategoryButton.Location = new System.Drawing.Point(208, 250);
+            this.editCategoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editCategoryButton.ForeColor = System.Drawing.Color.White;
+            this.editCategoryButton.Location = new System.Drawing.Point(312, 250);
             this.editCategoryButton.Name = "editCategoryButton";
             this.editCategoryButton.Size = new System.Drawing.Size(162, 23);
             this.editCategoryButton.TabIndex = 4;
@@ -94,7 +98,9 @@
             // 
             // deleteButton
             // 
-            this.deleteButton.Location = new System.Drawing.Point(208, 308);
+            this.deleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteButton.ForeColor = System.Drawing.Color.White;
+            this.deleteButton.Location = new System.Drawing.Point(312, 308);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(162, 23);
             this.deleteButton.TabIndex = 5;
@@ -116,7 +122,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(52, 104);
+            this.label5.Location = new System.Drawing.Point(22, 106);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(216, 30);
             this.label5.TabIndex = 8;
@@ -124,9 +130,9 @@
             // 
             // categoryNameTextBox
             // 
-            this.categoryNameTextBox.Location = new System.Drawing.Point(274, 113);
+            this.categoryNameTextBox.Location = new System.Drawing.Point(312, 113);
             this.categoryNameTextBox.Name = "categoryNameTextBox";
-            this.categoryNameTextBox.Size = new System.Drawing.Size(216, 23);
+            this.categoryNameTextBox.Size = new System.Drawing.Size(162, 23);
             this.categoryNameTextBox.TabIndex = 9;
             // 
             // dataCategoriesGridView
@@ -145,7 +151,9 @@
             // 
             // goToNotesMenu
             // 
-            this.goToNotesMenu.Location = new System.Drawing.Point(208, 457);
+            this.goToNotesMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.goToNotesMenu.ForeColor = System.Drawing.Color.White;
+            this.goToNotesMenu.Location = new System.Drawing.Point(312, 489);
             this.goToNotesMenu.Name = "goToNotesMenu";
             this.goToNotesMenu.Size = new System.Drawing.Size(162, 23);
             this.goToNotesMenu.TabIndex = 30;
@@ -157,6 +165,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(907, 599);
             this.Controls.Add(this.goToNotesMenu);
             this.Controls.Add(this.dataCategoriesGridView);

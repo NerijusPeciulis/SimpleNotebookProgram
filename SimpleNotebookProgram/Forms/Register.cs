@@ -20,6 +20,7 @@ namespace SimpleNotebookProgram
 
         public static NotebookDBContext _context = new NotebookDBContext();
         UserServices addUser = new(_context);
+        Login login = new Login();
         public registerForm()
         {
             InitializeComponent();
@@ -32,6 +33,7 @@ namespace SimpleNotebookProgram
 
             addUser.CreateNewUser(username, password);
             MessageBox.Show("Account created succsesfully");
+            login.Show();
             this.Hide();
            
         }
@@ -42,6 +44,10 @@ namespace SimpleNotebookProgram
             passwordTextBox.Clear();
         }
 
-        
+        private void backToLogin_Click(object sender, EventArgs e)
+        {
+            login.Show();
+            this.Hide();
+        }
     }
 }
