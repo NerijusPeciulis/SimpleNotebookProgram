@@ -19,16 +19,19 @@ namespace Business.Services
         public void CreateNewUser(string username, string password)
         {
             User user = new(username, password);
-// _context.Users.Where(users => users.UserName == userName).ToList();
-          //  return user;
-            
+
             _context.Add(user);
             _context.SaveChanges();
 
             var users = _context.Users.
-                FirstOrDefault(users => users.Username == username && users.Password == password);
-            
+            FirstOrDefault(users => users.Username == username && users.Password == password);
         }
 
+        public User FindUserByLogNameAndPassword(string userName, string userPassword)
+        {
+            var user = _context.Users.
+            FirstOrDefault(user => user.Username == userName && user.Password == userPassword);
+            return user;
+        }
     }
 }

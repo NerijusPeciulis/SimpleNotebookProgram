@@ -17,18 +17,21 @@ namespace SimpleNotebookProgram
     {
         public static NotebookDBContext _context = new NotebookDBContext();
         NotesMenu notesmenu = new NotesMenu();
+        categoriesMenu categoriesMenu = new categoriesMenu();
+        registerForm registerForm = new registerForm();
         UserServices findUser = new(_context);
         public Login()
         {
             InitializeComponent();
         }
 
-       /* private void loginButton_Click(object sender, EventArgs e)
+        private void loginButton_Click(object sender, EventArgs e)
         {
             string userName = userNameLoginTextBox.Text;
             string userPassword = passwordLoginTextBox.Text;
 
             var user = findUser.FindUserByLogNameAndPassword(userName, userPassword);
+
             if (user == null)
             {
                 MessageBox.Show("User name or password is incorrect, please try again.");
@@ -37,9 +40,21 @@ namespace SimpleNotebookProgram
             }
             else
             {
-                notesmenu.Show();
+                categoriesMenu.Show();
                 this.Hide();
             }
-        }*/
+        }
+
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            userNameLoginTextBox.Clear();
+            passwordLoginTextBox.Clear();
+        }
+
+        private void registerButton_Click(object sender, EventArgs e)
+        {
+            registerForm.Show();
+            this.Hide();
+        }
     }
 }

@@ -36,7 +36,7 @@
             this.clearButton = new System.Windows.Forms.Button();
             this.loginButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.registerButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // passwordLoginTextBox
@@ -96,22 +96,27 @@
             // 
             // clearButton
             // 
+            this.clearButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.clearButton.ForeColor = System.Drawing.Color.White;
             this.clearButton.Location = new System.Drawing.Point(102, 341);
             this.clearButton.Name = "clearButton";
             this.clearButton.Size = new System.Drawing.Size(102, 43);
             this.clearButton.TabIndex = 12;
             this.clearButton.Text = "Clear";
             this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
             // 
             // loginButton
             // 
+            this.loginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.loginButton.ForeColor = System.Drawing.Color.White;
             this.loginButton.Location = new System.Drawing.Point(247, 341);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(100, 43);
             this.loginButton.TabIndex = 13;
             this.loginButton.Text = "Login";
             this.loginButton.UseVisualStyleBackColor = true;
-
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
             // label3
             // 
@@ -123,21 +128,25 @@
             this.label3.TabIndex = 14;
             this.label3.Text = "If you do not have registration, click";
             // 
-            // button1
+            // registerButton
             // 
-            this.button1.Location = new System.Drawing.Point(172, 519);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(104, 41);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Register";
-            this.button1.UseVisualStyleBackColor = true;
+            this.registerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.registerButton.ForeColor = System.Drawing.Color.White;
+            this.registerButton.Location = new System.Drawing.Point(172, 519);
+            this.registerButton.Name = "registerButton";
+            this.registerButton.Size = new System.Drawing.Size(104, 41);
+            this.registerButton.TabIndex = 15;
+            this.registerButton.Text = "Register";
+            this.registerButton.UseVisualStyleBackColor = true;
+            this.registerButton.Click += new System.EventHandler(this.registerButton_Click);
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(471, 620);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.registerButton);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.loginButton);
             this.Controls.Add(this.clearButton);
@@ -163,6 +172,6 @@
         private System.Windows.Forms.Button clearButton;
         private System.Windows.Forms.Button loginButton;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button registerButton;
     }
 }
