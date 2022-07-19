@@ -1,10 +1,6 @@
 ﻿using Repository.DBContext;
 using Repository.Models;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Business.Services
 {
@@ -26,8 +22,7 @@ namespace Business.Services
             _context.SaveChanges();
 
             var categories = _context.Categories.
-                FirstOrDefault(categories => categories.Name == name);
-
+            FirstOrDefault(categories => categories.Name == name);
 
         }
 
