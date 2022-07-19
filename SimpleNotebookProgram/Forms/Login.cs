@@ -23,7 +23,7 @@ namespace SimpleNotebookProgram
             InitializeComponent();
         }
 
-        private void loginButton_Click(object sender, EventArgs e)
+       /* private void loginButton_Click(object sender, EventArgs e)
         {
             string userName = userNameLoginTextBox.Text;
             string userPassword = passwordLoginTextBox.Text;
@@ -40,6 +40,6 @@ namespace SimpleNotebookProgram
                 notesmenu.Show();
                 this.Hide();
             }
-        }
+        }*/
     }
 }

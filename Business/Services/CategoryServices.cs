@@ -31,11 +31,7 @@ namespace Business.Services
 
         }
 
-        public void ShowCategories()
-        {
-            _context.DisplayAndSearch("SELECT id, Name", dataGridview);
-
-        }
+       
 
     }
 }
