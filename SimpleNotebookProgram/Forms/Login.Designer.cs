@@ -131,7 +131,7 @@
             // registerButton
             // 
             this.registerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.registerButton.ForeColor = System.Drawing.Color.White;
+            this.registerButton.ForeColor = System.Drawing.Color.IndianRed;
             this.registerButton.Location = new System.Drawing.Point(172, 519);
             this.registerButton.Name = "registerButton";
             this.registerButton.Size = new System.Drawing.Size(104, 41);

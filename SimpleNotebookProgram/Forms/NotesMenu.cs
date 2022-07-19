@@ -16,7 +16,7 @@ namespace SimpleNotebookProgram.Forms
         SqlConnection sqlConnection = new SqlConnection("Server=localhost;Database=NotebookDB;Trusted_Connection=True;");
         SqlCommand sqlcomand;
         SqlDataAdapter sqlDataAdapter;
-
+        
         int Id = 0;
         public NotesMenu()
         {
@@ -126,7 +126,9 @@ namespace SimpleNotebookProgram.Forms
 
         private void backToCategoriesMenu_Click(object sender, EventArgs e)
         {
-
+            categoriesMenu categoriesMenu = new categoriesMenu();
+            categoriesMenu.Show();
+            this.Hide();
         }
 
         private void addImageButton_Click(object sender, EventArgs e)
