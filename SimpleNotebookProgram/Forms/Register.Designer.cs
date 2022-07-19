@@ -33,11 +33,9 @@
             this.userNameTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
-            this.confirmPasswordTextBox = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.loginRegisterButton = new System.Windows.Forms.Button();
             this.clearRegisterButton = new System.Windows.Forms.Button();
-            this.checkBoxShowRegisterPasword = new System.Windows.Forms.CheckBox();
+            this.backToLogin = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -97,31 +95,10 @@
             this.passwordTextBox.Size = new System.Drawing.Size(238, 43);
             this.passwordTextBox.TabIndex = 4;
             // 
-            // confirmPasswordTextBox
-            // 
-            this.confirmPasswordTextBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.confirmPasswordTextBox.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.confirmPasswordTextBox.Location = new System.Drawing.Point(85, 286);
-            this.confirmPasswordTextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.confirmPasswordTextBox.Multiline = true;
-            this.confirmPasswordTextBox.Name = "confirmPasswordTextBox";
-            this.confirmPasswordTextBox.Size = new System.Drawing.Size(238, 43);
-            this.confirmPasswordTextBox.TabIndex = 6;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(138, 261);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(164, 25);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Confirm Password";
-            // 
             // loginRegisterButton
             // 
             this.loginRegisterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.loginRegisterButton.ForeColor = System.Drawing.Color.White;
             this.loginRegisterButton.Location = new System.Drawing.Point(223, 503);
             this.loginRegisterButton.Name = "loginRegisterButton";
             this.loginRegisterButton.Size = new System.Drawing.Size(100, 43);
@@ -132,6 +109,8 @@
             // 
             // clearRegisterButton
             // 
+            this.clearRegisterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.clearRegisterButton.ForeColor = System.Drawing.Color.White;
             this.clearRegisterButton.Location = new System.Drawing.Point(85, 503);
             this.clearRegisterButton.Name = "clearRegisterButton";
             this.clearRegisterButton.Size = new System.Drawing.Size(102, 43);
@@ -140,28 +119,27 @@
             this.clearRegisterButton.UseVisualStyleBackColor = true;
             this.clearRegisterButton.Click += new System.EventHandler(this.clearRegisterButton_Click);
             // 
-            // checkBoxShowRegisterPasword
+            // backToLogin
             // 
-            this.checkBoxShowRegisterPasword.AutoSize = true;
-            this.checkBoxShowRegisterPasword.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.checkBoxShowRegisterPasword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.checkBoxShowRegisterPasword.Location = new System.Drawing.Point(188, 336);
-            this.checkBoxShowRegisterPasword.Name = "checkBoxShowRegisterPasword";
-            this.checkBoxShowRegisterPasword.Size = new System.Drawing.Size(135, 25);
-            this.checkBoxShowRegisterPasword.TabIndex = 16;
-            this.checkBoxShowRegisterPasword.Text = "Show Password";
-            this.checkBoxShowRegisterPasword.UseVisualStyleBackColor = true;
+            this.backToLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backToLogin.ForeColor = System.Drawing.Color.White;
+            this.backToLogin.Location = new System.Drawing.Point(138, 570);
+            this.backToLogin.Name = "backToLogin";
+            this.backToLogin.Size = new System.Drawing.Size(129, 43);
+            this.backToLogin.TabIndex = 16;
+            this.backToLogin.Text = "Back To Login";
+            this.backToLogin.UseVisualStyleBackColor = true;
+            this.backToLogin.Click += new System.EventHandler(this.backToLogin_Click);
             // 
             // registerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(414, 879);
-            this.Controls.Add(this.checkBoxShowRegisterPasword);
+            this.Controls.Add(this.backToLogin);
             this.Controls.Add(this.loginRegisterButton);
             this.Controls.Add(this.clearRegisterButton);
-            this.Controls.Add(this.confirmPasswordTextBox);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.passwordTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.userNameTextBox);
@@ -171,7 +149,6 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "registerForm";
             this.Text = "Register";
-        
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,10 +161,8 @@
         private System.Windows.Forms.TextBox userNameTextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox passwordTextBox;
-        private System.Windows.Forms.TextBox confirmPasswordTextBox;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button loginRegisterButton;
         private System.Windows.Forms.Button clearRegisterButton;
-        private System.Windows.Forms.CheckBox checkBoxShowRegisterPasword;
+        private System.Windows.Forms.Button backToLogin;
     }
 }
