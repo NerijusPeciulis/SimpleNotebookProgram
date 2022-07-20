@@ -17,16 +17,8 @@ namespace Business.Services
         {
             Category category = new(name, userId);
 
-
             _context.Add(category);
             _context.SaveChanges();
-
-            var categories = _context.Categories.
-            FirstOrDefault(categories => categories.Name == name);
-
         }
-
-       
-
     }
 }

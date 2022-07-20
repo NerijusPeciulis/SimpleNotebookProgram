@@ -21,13 +21,8 @@ namespace Business.Services
         {
             Note note = new(name, description, categoryId);
 
-
             _context.Add(note);
             _context.SaveChanges();
-
-            var notes = _context.Notes.
-            FirstOrDefault(notes => notes.Name == name);
-
         }
     }
 }
