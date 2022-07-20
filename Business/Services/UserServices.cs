@@ -19,14 +19,16 @@ namespace Business.Services
             _context.SaveChanges();
 
             var users = _context.Users.
-            FirstOrDefault(users => users.UserName == username && users.Password == password);
+            FirstOrDefault(users => users.Username == username && users.Password == password);
         }
 
-        public User FindUserByLogNameAndPassword(string userName, string userPassword)
+        public User FindUserByLogNameAndPassword(string username, string password)
         {
-            var user = _context.Users.
-            FirstOrDefault(user => user.UserName == userName && user.Password == userPassword);
+            User user = new(username, password);
+            var result = _context.Users.
+            FirstOrDefault(result => result.Username == username && result.Password == password);
             return user;
+;
         }
     }
 }

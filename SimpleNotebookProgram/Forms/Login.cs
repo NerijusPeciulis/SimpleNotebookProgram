@@ -20,10 +20,10 @@ namespace SimpleNotebookProgram
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            string userName = userNameLoginTextBox.Text;
-            string userPassword = passwordLoginTextBox.Text;
+            string username = userNameLoginTextBox.Text;
+            string password = passwordLoginTextBox.Text;
 
-            var user = findUser.FindUserByLogNameAndPassword(userName, userPassword);
+            var user = findUser.FindUserByLogNameAndPassword(username, password);
 
             if (user == null)
             {
