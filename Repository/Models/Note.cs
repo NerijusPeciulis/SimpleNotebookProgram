@@ -16,10 +16,11 @@ namespace Repository.Models
         public int CategoryId { get; set; }
         public Category Category { get; set; }
 
-        public Note(string name, string description)
+        public Note(string name, string description, int categoryId)
         {
             Name = name;
             Description = description;
+            CategoryId = categoryId;
         }
     }
 }

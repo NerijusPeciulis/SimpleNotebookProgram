@@ -16,6 +16,7 @@ namespace SimpleNotebookProgram.Forms
         public NotesMenu()
         {
             InitializeComponent();
+            DisplayData();
         }
 
         private void DisplayData()
@@ -32,16 +33,18 @@ namespace SimpleNotebookProgram.Forms
         {
             if (noteNameTextbox.Text != "" && noteDescription.Text != "")
             {
-                sqlcomand = new SqlCommand("INSERT into Notes (Name, Description) values (@name,@description)", sqlConnection);
+                sqlcomand = new SqlCommand("INSERT into Notes (Name, Description, CategoryId) values (@name,@description,@categoryId)", sqlConnection);
                 sqlConnection.Open();
                 sqlcomand.Parameters.AddWithValue("@name", noteNameTextbox.Text);
                 sqlcomand.Parameters.AddWithValue("@description", noteDescription.Text);
+                sqlcomand.Parameters.AddWithValue("@categoryId", categoryIdTextBox.Text);
                 sqlcomand.ExecuteNonQuery();
                 sqlConnection.Close();
                 MessageBox.Show("Record Inserted Successfully");
                 DisplayData();
                 noteNameTextbox.Clear();
                 noteDescription.Clear();
+                categoryIdTextBox.Clear();
             }
             else
             {
@@ -67,6 +70,7 @@ namespace SimpleNotebookProgram.Forms
                 DisplayData();
                 noteNameTextbox.Clear();
                 noteDescription.Clear();
+                categoryIdTextBox.Clear();
 
             }
             else
@@ -80,23 +84,26 @@ namespace SimpleNotebookProgram.Forms
             Id = Convert.ToInt32(dataNotesGridView.Rows[e.RowIndex].Cells[0].Value.ToString());
             noteNameTextbox.Text = dataNotesGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
             noteDescription.Text = dataNotesGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
+            categoryIdTextBox.Text = dataNotesGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
         }
 
         private void editNoteButton_Click(object sender, EventArgs e)
         {
             if (noteNameTextbox.Text != "" && noteDescription.Text != "")
             {
-                sqlcomand = new SqlCommand("UPDATE Notes SET Name=@name, Description=@description WHERE Id=@Id", sqlConnection);
+                sqlcomand = new SqlCommand("UPDATE Notes SET Name=@name, Description=@description, CategoryId=@categoryId WHERE Id=@Id", sqlConnection);
                 sqlConnection.Open();
                 sqlcomand.Parameters.AddWithValue("@Id", Id);
                 sqlcomand.Parameters.AddWithValue("@name", noteNameTextbox.Text);
                 sqlcomand.Parameters.AddWithValue("@description", noteDescription.Text);
+                sqlcomand.Parameters.AddWithValue("@categoryId", categoryIdTextBox.Text);
                 sqlcomand.ExecuteNonQuery();
                 MessageBox.Show("Record Updated Successfully");
                 sqlConnection.Close();
                 DisplayData();
                 noteNameTextbox.Clear();
                 noteDescription.Clear();
+                categoryIdTextBox.Clear();
             }
             else
             {
