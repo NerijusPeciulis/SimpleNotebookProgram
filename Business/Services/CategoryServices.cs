@@ -19,6 +19,8 @@ namespace Business.Services
 
             _context.Add(category);
             _context.SaveChanges();
+            var categories = _context.Categories.
+               FirstOrDefault(categories => categories.Name == name);
         }
     }
 }

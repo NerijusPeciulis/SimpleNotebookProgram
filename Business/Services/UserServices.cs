@@ -17,14 +17,16 @@ namespace Business.Services
 
             _context.Add(user);
             _context.SaveChanges();
+
+            var users = _context.Users.
+               FirstOrDefault(users => users.Username == username && users.Password == password);
         }
 
         public User FindUserByLogNameAndPassword(string username, string password)
         {
-            User user = new(username, password);
-            var result = _context.Users.
-            FirstOrDefault(result => result.Username == username && result.Password == password);
-            return user;
+            var users = _context.Users.
+            FirstOrDefault(users => users.Username == username && users.Password == password);
+            return users;
         }
     }
 }
