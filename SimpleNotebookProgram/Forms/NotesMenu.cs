@@ -38,9 +38,21 @@ namespace SimpleNotebookProgram.Forms
                 sqlcomand.Parameters.AddWithValue("@name", noteNameTextbox.Text);
                 sqlcomand.Parameters.AddWithValue("@description", noteDescription.Text);
                 sqlcomand.Parameters.AddWithValue("@categoryId", categoryIdTextBox.Text);
-                sqlcomand.ExecuteNonQuery();
+
+                try
+                {
+                    sqlcomand.ExecuteNonQuery();
+                    MessageBox.Show("Record Inserted Successfully");
+                }
+                catch
+                {
+                    NotesMenu notesMenu = new NotesMenu();
+                    MessageBox.Show("Bad Category Id, try again");
+                    notesMenu.Show();
+                    this.Hide();
+                }
+
                 sqlConnection.Close();
-                MessageBox.Show("Record Inserted Successfully");
                 DisplayData();
                 noteNameTextbox.Clear();
                 noteDescription.Clear();

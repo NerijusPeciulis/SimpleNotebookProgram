@@ -38,9 +38,21 @@ namespace SimpleNotebookProgram
                 sqlConnection.Open();
                 sqlcomand.Parameters.AddWithValue("@name", categoryNameTextBox.Text);
                 sqlcomand.Parameters.AddWithValue("@userId", userIdTextBox.Text);
-                sqlcomand.ExecuteNonQuery();
+                
+                try
+                {
+                    sqlcomand.ExecuteNonQuery();
+                    MessageBox.Show("Record Inserted Successfully");
+                }
+                catch
+                {
+                    categoriesMenu categoriesMenu = new categoriesMenu();
+                    MessageBox.Show("Bad User Id, try again");
+                    categoriesMenu.Show();
+                    this.Hide();
+                }
+
                 sqlConnection.Close();
-                MessageBox.Show("Record Inserted Successfully");
                 DisplayData();
                 categoryNameTextBox.Clear();
                 userIdTextBox.Clear();
