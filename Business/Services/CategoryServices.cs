@@ -13,9 +13,9 @@ namespace Business.Services
             _context = context;
         }
 
-        public void CreateNewCategory(string name)
+        public void CreateNewCategory(string name, int userId)
         {
-            Category category = new(name);
+            Category category = new(name, userId);
 
 
             _context.Add(category);

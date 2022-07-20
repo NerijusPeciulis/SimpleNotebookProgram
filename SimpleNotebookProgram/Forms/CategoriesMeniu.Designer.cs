@@ -39,6 +39,8 @@
             this.dataCategoriesGridView = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.goToNotesMenu = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.userIdTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataCategoriesGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,7 +68,7 @@
             // 
             this.categoriesCreateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.categoriesCreateButton.ForeColor = System.Drawing.Color.White;
-            this.categoriesCreateButton.Location = new System.Drawing.Point(343, 150);
+            this.categoriesCreateButton.Location = new System.Drawing.Point(343, 179);
             this.categoriesCreateButton.Name = "categoriesCreateButton";
             this.categoriesCreateButton.Size = new System.Drawing.Size(162, 23);
             this.categoriesCreateButton.TabIndex = 3;
@@ -139,7 +141,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(12, 143);
+            this.label1.Location = new System.Drawing.Point(12, 172);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(162, 30);
             this.label1.TabIndex = 11;
@@ -157,12 +159,31 @@
             this.goToNotesMenu.UseVisualStyleBackColor = true;
             this.goToNotesMenu.Click += new System.EventHandler(this.goToNotesMenu_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(12, 130);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(136, 30);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Insert User Id";
+            // 
+            // userIdTextBox
+            // 
+            this.userIdTextBox.Location = new System.Drawing.Point(343, 139);
+            this.userIdTextBox.Name = "userIdTextBox";
+            this.userIdTextBox.Size = new System.Drawing.Size(162, 23);
+            this.userIdTextBox.TabIndex = 14;
+            // 
             // categoriesMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(907, 599);
+            this.Controls.Add(this.userIdTextBox);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.goToNotesMenu);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataCategoriesGridView);
@@ -194,5 +215,7 @@
         private System.Windows.Forms.DataGridView dataCategoriesGridView;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button goToNotesMenu;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox userIdTextBox;
     }
 }

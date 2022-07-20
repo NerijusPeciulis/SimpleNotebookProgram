@@ -34,14 +34,16 @@ namespace SimpleNotebookProgram
         {
             if (categoryNameTextBox.Text != "")
             {
-                sqlcomand = new SqlCommand("INSERT into Categories (Name) values (@name)", sqlConnection);
+                sqlcomand = new SqlCommand("INSERT into Categories (Name, UserId) values (@name, @userId)", sqlConnection);
                 sqlConnection.Open();
                 sqlcomand.Parameters.AddWithValue("@name", categoryNameTextBox.Text);
+                sqlcomand.Parameters.AddWithValue("@userId", userIdTextBox.Text);
                 sqlcomand.ExecuteNonQuery();
                 sqlConnection.Close();
                 MessageBox.Show("Record Inserted Successfully");
                 DisplayData();
                 categoryNameTextBox.Clear();
+                userIdTextBox.Clear();
             }
             else
             {
@@ -62,6 +64,7 @@ namespace SimpleNotebookProgram
                 MessageBox.Show("Data deleted");
                 DisplayData();
                 categoryNameTextBox.Clear();
+                userIdTextBox.Clear();
 
             }
             else
@@ -74,21 +77,24 @@ namespace SimpleNotebookProgram
         {
             Id = Convert.ToInt32(dataCategoriesGridView.Rows[e.RowIndex].Cells[0].Value.ToString());
             categoryNameTextBox.Text = dataCategoriesGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
+            userIdTextBox.Text = dataCategoriesGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
         }
 
         private void editCategoryButton_Click(object sender, EventArgs e)
         {
             if (categoryNameTextBox.Text != "")
             {
-                sqlcomand = new SqlCommand("UPDATE Categories SET Name=@name WHERE Id=@Id", sqlConnection);
+                sqlcomand = new SqlCommand("UPDATE Categories SET Name=@name, UserId=@userId WHERE Id=@Id", sqlConnection);
                 sqlConnection.Open();
                 sqlcomand.Parameters.AddWithValue("@Id", Id);
                 sqlcomand.Parameters.AddWithValue("@name", categoryNameTextBox.Text);
+                sqlcomand.Parameters.AddWithValue("@userId", userIdTextBox.Text);
                 sqlcomand.ExecuteNonQuery();
                 MessageBox.Show("Record Updated Successfully");
                 sqlConnection.Close();
                 DisplayData();
                 categoryNameTextBox.Clear();
+                userIdTextBox.Clear();
             }
             else
             {
