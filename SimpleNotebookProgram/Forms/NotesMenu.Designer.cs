@@ -49,6 +49,8 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.label8 = new System.Windows.Forms.Label();
             this.categoryIdTextBox = new System.Windows.Forms.TextBox();
+            this.filterNotesByCategoryId = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataNotesGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
@@ -152,9 +154,10 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(553, 77);
+            this.textBox1.MaxLength = 200;
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(436, 491);
+            this.textBox1.Size = new System.Drawing.Size(436, 529);
             this.textBox1.TabIndex = 20;
             // 
             // noteSearchTextBox
@@ -193,7 +196,7 @@
             // 
             this.backToCategoriesMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.backToCategoriesMenu.ForeColor = System.Drawing.Color.White;
-            this.backToCategoriesMenu.Location = new System.Drawing.Point(370, 589);
+            this.backToCategoriesMenu.Location = new System.Drawing.Point(690, 35);
             this.backToCategoriesMenu.Name = "backToCategoriesMenu";
             this.backToCategoriesMenu.Size = new System.Drawing.Size(162, 23);
             this.backToCategoriesMenu.TabIndex = 25;
@@ -203,6 +206,9 @@
             // 
             // dataNotesGridView
             // 
+            this.dataNotesGridView.AllowUserToAddRows = false;
+            this.dataNotesGridView.AllowUserToDeleteRows = false;
+            this.dataNotesGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataNotesGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataNotesGridView.Location = new System.Drawing.Point(14, 230);
             this.dataNotesGridView.Name = "dataNotesGridView";
@@ -215,7 +221,7 @@
             // 
             this.addImageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addImageButton.ForeColor = System.Drawing.Color.White;
-            this.addImageButton.Location = new System.Drawing.Point(704, 518);
+            this.addImageButton.Location = new System.Drawing.Point(690, 571);
             this.addImageButton.Name = "addImageButton";
             this.addImageButton.Size = new System.Drawing.Size(162, 23);
             this.addImageButton.TabIndex = 27;
@@ -225,7 +231,7 @@
             // 
             // pictureBox
             // 
-            this.pictureBox.Location = new System.Drawing.Point(704, 334);
+            this.pictureBox.Location = new System.Drawing.Point(690, 376);
             this.pictureBox.Name = "pictureBox";
             this.pictureBox.Size = new System.Drawing.Size(162, 162);
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -253,12 +259,32 @@
             this.categoryIdTextBox.Size = new System.Drawing.Size(162, 23);
             this.categoryIdTextBox.TabIndex = 30;
             // 
+            // filterNotesByCategoryId
+            // 
+            this.filterNotesByCategoryId.Location = new System.Drawing.Point(370, 583);
+            this.filterNotesByCategoryId.Name = "filterNotesByCategoryId";
+            this.filterNotesByCategoryId.Size = new System.Drawing.Size(162, 23);
+            this.filterNotesByCategoryId.TabIndex = 31;
+            this.filterNotesByCategoryId.TextChanged += new System.EventHandler(this.filterNotesByCategoryId_TextChanged);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label9.Location = new System.Drawing.Point(16, 576);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(260, 30);
+            this.label9.TabIndex = 32;
+            this.label9.Text = "Filter Notes By Category Id";
+            // 
             // NotesMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1010, 636);
+            this.ClientSize = new System.Drawing.Size(1010, 666);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.filterNotesByCategoryId);
             this.Controls.Add(this.categoryIdTextBox);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.pictureBox);
@@ -312,5 +338,7 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox categoryIdTextBox;
+        private System.Windows.Forms.TextBox filterNotesByCategoryId;
+        private System.Windows.Forms.Label label9;
     }
 }

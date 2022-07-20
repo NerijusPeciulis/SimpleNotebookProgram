@@ -155,5 +155,20 @@ namespace SimpleNotebookProgram.Forms
             string filePath = openFileDialog1.FileName;
             pictureBox.Image = Image.FromFile(filePath);
         }
+
+        private void filterNotesByCategoryId_TextChanged(object sender, EventArgs e)
+        {
+            sqlcomand = new SqlCommand("SELECT * FROM Notes WHERE CategoryId LIKE '%" + filterNotesByCategoryId.Text + "%'", sqlConnection);
+
+            sqlcomand.CommandType = CommandType.Text;
+            using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlcomand))
+            {
+                using (DataTable dataTable = new DataTable())
+                {
+                    sqlDataAdapter.Fill(dataTable);
+                    dataNotesGridView.DataSource = dataTable;
+                }
+            }
+        }
     }
 }

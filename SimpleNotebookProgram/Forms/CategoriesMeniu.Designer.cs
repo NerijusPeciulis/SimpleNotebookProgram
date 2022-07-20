@@ -129,6 +129,9 @@
             // 
             // dataCategoriesGridView
             // 
+            this.dataCategoriesGridView.AllowUserToAddRows = false;
+            this.dataCategoriesGridView.AllowUserToDeleteRows = false;
+            this.dataCategoriesGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataCategoriesGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataCategoriesGridView.Location = new System.Drawing.Point(534, 99);
             this.dataCategoriesGridView.Name = "dataCategoriesGridView";
